@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Untung/Rugi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profit.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('hpp') }}">Hitung Hpp</a>
+            <a href="{{ url_for('tot_biaya') }}">Total Biaya</a>
+            <a href="{{ url_for('profit') }}">Keuntungan & Rugi</a>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h1>Perhitungan Untung atau Rugi</h1>
+        <form action="/hitung" method="POST">
+            <label for="hargaJual">Harga Jual:</label>
+            <input type="number" id="hargaJual" name="hargaJual" required>
+
+            <label for="hargaHPP">Harga Pokok Produksi (HPP):</label>
+            <input type="number" id="hargaHPP" name="hargaHPP" required>
+
+            <button type="submit">Hitung</button>
+        </form>
+        <h2 class="hasil">Hasil:</h2>
+        <p>{{ hasil if hasil else 'Masukkan data untuk menghitung untung atau rugi.' }}</p>
+    </div>
+    <footer>
+        <div class="social">
+          <a href="https://www.instagram.com/mramadhan_a.f?igsh=MWs5bHplcmxxZGN6NA=="><i class="bi bi-instagram"></i></a>
+          <a href="https://github.com/ramadhan14123"><i class="bi bi-github"></i></a>
+          <a href="https://x.com/RamadhanAl12842?t=dkPDwCKnGXijlxKYdtOLCg&s=09"><i class="fa-brands fa-square-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/ramadhan-al-fikri-a65b092b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="credit">
+          <p>Created by <a href="">Ramadhan</a>. | &copy;2024.</p>
+        </div>
+    </footer>
+</body>
+</html>

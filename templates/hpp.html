@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung HPP dan Harga Jual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hpp.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('hpp') }}">Hitung Hpp</a>
+            <a href="{{ url_for('tot_biaya') }}">Total Biaya</a>
+            <a href="{{ url_for('profit') }}">Keuntungan & Rugi</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Hitung HPP</h2>
+            <form method="POST">
+                <label for="total_biaya">Total Biaya Produksi (Rp):</label>
+                <input type="number" name="total_biaya" id="total_biaya" step="0.01" required>
+    
+                <label for="jumlah_unit">Jumlah Unit yang Diproduksi:</label>
+                <input type="number" name="jumlah_unit" id="jumlah_unit" required>
+    
+                <label for="persentase_keuntungan">Persentase Keuntungan (%):</label>
+                <input type="number" name="persentase_keuntungan" id="persentase_keuntungan" step="0.01" required>
+    
+                <button type="submit">Hitung</button>
+            </form>
+    
+            {% if hpp %}
+            <div class="result">
+                <p><strong>HPP Per Unit:</strong> Rp {{ hpp }}</p>
+                <p><strong>Harga Jual Per Unit (dengan keuntungan):</strong> Rp {{ harga_jual }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+          <a href="https://www.instagram.com/mramadhan_a.f?igsh=MWs5bHplcmxxZGN6NA=="><i class="bi bi-instagram"></i></a>
+          <a href="https://github.com/ramadhan14123"><i class="bi bi-github"></i></a>
+          <a href="https://x.com/RamadhanAl12842?t=dkPDwCKnGXijlxKYdtOLCg&s=09"><i class="fa-brands fa-square-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/ramadhan-al-fikri-a65b092b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="credit">
+          <p>Created by <a href="">Ramadhan</a>. | &copy;2024.</p>
+        </div>
+    </footer>
+</body>
+</html>

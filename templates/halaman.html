@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/halaman.css') }}">
+</head>
+<body>
+    <main class="halaman_utama">
+        <div class="container">
+            <a href="{{ url_for('hpp') }}">Hitung Hpp</a>
+            <a href="{{ url_for('tot_biaya') }}">Total Biaya</a>
+            <a href="{{ url_for('profit') }}">Keuntungan & Rugi</a>
+        </div>
+    </main>
+</body>
+</html>
